@@ -85,9 +85,50 @@
 // ADVANTAGES
 .advantages
     padding-top: 65px
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        margin: 0 62px 150px
+        
     &__title
         img
             height: auto
             width: 100%
+    &__item
+        text-align: center
+        align-items: center
+        flex-basis: 258px            
+        &-img
+            margin-bottom: 50px
+        &-title
+            color: #000
+            font-weight: 700
+            font-size: 24.83px
+            margin-bottom: 30px
+        &-text
+            color: #a7a8a9
+            font-size: 15px
+            line-height: 1.6
+           
+
+
+// OFFERS 
+
+.offers
+    background-color: #101415
+    padding-top: 45px
+    &__title
+        position: relative
+        &::after
+            content: "ВЫГОДНЫЕ ПРЕДЛОЖЕНИЯ"
+            font-weight: 500 
+            position: absolute
+            top: 50%
+            right: 50%
+            transform: translate(50%)
+    &__wrapper
+        padding-top: 45px
+        display: flex
+        justify-content: space-between
 
 
