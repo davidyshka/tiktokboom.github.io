@@ -103,11 +103,15 @@
         flex-basis: 258px       
         &-img
             margin-bottom: 50px
+
+                
         &-title
             color: #000
             font-weight: 700
             font-size: 24.83px
             margin-bottom: 30px
+            
+                
         &-text
             color: #a7a8a9
             font-size: 15px
@@ -120,6 +124,7 @@
 .offers
     background-color: #101415
     padding-top: 45px
+    padding-bottom: 155px
     &__item
         text-align: center
         &-package
@@ -137,8 +142,33 @@
             border-radius: 10px
             width: 275px
             height: 227px
-            img
-                margin-bottom: 30px
+            position: relative
+        &-price
+            position: absolute
+            width: 175px
+            height: 50px
+            border-radius: 10px
+            background-color: #fff
+            bottom: -18px
+            font-size: 28.82px
+            font-weight: bold
+            color: #000
+            display: flex
+            align-items: center
+            justify-content: center        
+            &::after
+                content: ''
+                width: 0
+                height: 0
+                position: absolute
+                top: -8px
+                right: 50%
+                transform: translateX(50%)
+                border-left: 8px solid transparent
+                border-right: 8px solid transparent
+                border-bottom: 8px solid #fff            
+        img
+            margin-bottom: 30px
         &-title
             font-weight: bold
             font-size: 28.75px
@@ -165,3 +195,14 @@
         justify-content: space-between
 
 
+// price
+.blue-price
+    background-color: #85c0c9
+    color: #fff
+    &::after
+        border-bottom-color: #85c0c9
+.red-price
+    background-color: #dc3e5a
+    color: #fff
+    &::after
+        border-bottom-color: #dc3e5a
