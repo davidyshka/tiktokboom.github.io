@@ -9,6 +9,8 @@
     margin: 0
     font-family: 'Montserrat', sans-serif;
     color: #fff
+
+
 .slash
     display: block
     height: 80px
@@ -91,13 +93,14 @@
         margin: 0 62px 150px
         
     &__title
+        user-select: none
         img
             height: auto
             width: 100%
     &__item
         text-align: center
         align-items: center
-        flex-basis: 258px            
+        flex-basis: 258px       
         &-img
             margin-bottom: 50px
         &-title
@@ -117,8 +120,37 @@
 .offers
     background-color: #101415
     padding-top: 45px
+    &__item
+        text-align: center
+        &-package
+            display: block
+            margin-bottom: 13px
+            font-size: 11px
+            font-weight: 600
+            color: #797b7c
+        &-block
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            background-color: #1b2325
+            border-radius: 10px
+            width: 275px
+            height: 227px
+            img
+                margin-bottom: 30px
+        &-title
+            font-weight: bold
+            font-size: 28.75px
+        &-views
+            color: #797b7c
+            font-size: 14px
     &__title
         position: relative
+        user-select: none
+        img
+            width: 100%
+            height: auto 
         &::after
             content: "ВЫГОДНЫЕ ПРЕДЛОЖЕНИЯ"
             font-weight: 500 
@@ -126,6 +158,7 @@
             top: 50%
             right: 50%
             transform: translate(50%)
+    
     &__wrapper
         padding-top: 45px
         display: flex
