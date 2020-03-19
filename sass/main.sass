@@ -8,8 +8,10 @@
     padding: 0
     margin: 0
     font-family: 'Montserrat', sans-serif;
+body
     color: #fff
-
+a
+    text-decoration: none
 
 .slash
     display: block
@@ -206,3 +208,112 @@
     color: #fff
     &::after
         border-bottom-color: #dc3e5a
+
+// calc
+.calc
+    color: #000
+    padding-top: 85px
+    &__wrapper
+        display: flex  
+        justify-content: center
+    &__img
+        user-select: none
+        margin-top: 95px
+        margin-right: 70px
+        width: 100%
+        height: auto
+    &__input
+        font-size: 37.83px
+        border: none
+        background: #f2f9fa
+        
+        
+
+.calculator
+    display: flex
+    flex-direction: column
+    background-color: #f2f9fa
+    height: 120px
+    padding-top: 18px
+    margin-bottom: 12px
+    padding-left: 25px
+    padding-right: 25px
+    &__view
+        font-size: 15.63px
+        margin-bottom: 18px
+        color: #c9cfd0
+
+.link
+    display: flex
+    flex-direction: column
+    background-color: #f2f9fa
+    height: 120px
+    padding-top: 18px
+    margin-bottom: 35px
+    padding-left: 25px
+    &__input
+        font-size: 15.63px
+        border: none
+        background: #f2f9fa
+        height: 40px
+    &__text
+        font-size: 15.63px
+        margin-bottom: 18px
+        color: #c9cfd0
+.pay
+    display: block
+    color: #c9cfd0
+    font-size: 15.63px
+    padding-bottom: 20px
+    &__btn
+        align-self: center
+        margin-left: 90px
+        padding: 15px 45px
+        border-radius: 8px
+        text-decoration: none
+        text-transform: uppercase
+        color: #fff
+        font-weight: 600
+        background-color: #ce4e67
+        transition: background .2s 
+        &:hover
+            background-color: #bc425b
+
+        
+.payments
+    display: flex
+    justify-content: space-between
+    margin-bottom: 60px
+    &__item
+        width: 165px
+        height: 80px
+        border: 1px solid #f9ecef
+.itogo
+    font-size: 23.76px
+    margin-bottom: 10px
+    &__wrapper
+        display: flex
+        margin-bottom: 100px
+    &__otvet
+        display: flex
+        font-weight: bold
+        font-size: 32.23px
+
+
+.footer
+    display: flex
+    align-items: center
+    height: 142px
+    background-color: #191e1f
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__info
+        &-help
+            font-size: 13.47px
+            span
+                color: #6fabb1
+.rights
+    font-size: 12.02px
+    color: #acadae

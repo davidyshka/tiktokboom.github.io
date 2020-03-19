@@ -113,6 +113,60 @@
             </div>
         </div>
     </section>
+    <section class="calc" id="calc">
+        <div class="container">
+
+            <div class="calc__wrapper">
+                <div class="calc__img">
+                    <img ondragstart="return false;" src="./img/FIXPRISE.png" alt="FIXPRISE">
+                </div>
+                <div class="calc__wrapper-two">
+                    <div class="calculator">
+                        <span class="calculator__view">Введите количество просмотров</span>
+                        <input onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="calc__input"
+                            oninput='calc()' type="text" name="number-viewers" autocomplete="off" id="n1">
+                    </div>
+
+                    <div class="link">
+                        <span class="link__text">Вставьте ссылку на видео</span>
+                        <input class="link__input" type="text">
+                    </div>
+                    <span class="pay">Выберите способ оплаты</span>
+                    <div class="payments">
+                        <div class="payments__item">
+                            <img src="#" alt="payments">
+                        </div>
+                        <div class="payments__item">
+                            <img src="#" alt="payments">
+                        </div>
+                        <div class="payments__item">
+                            <img src="#" alt="payments">
+                        </div>
+                    </div>
+                    <div class="itogo__wrapper">
+                        <div>
+                            <div class="itogo">Итого к оплате:</div>
+                            <div class="itogo__otvet" id="out">
+                                0 Руб.
+                            </div>
+                        </div>
+                        <a class="pay__btn" href="#">Оплатить</a>
+                    </div>
+                </div>
+
+
+    </section>
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__info">
+                    <div class="footer__info-help">Техническая поддержка <span>@tikboomhelp@gmail.com</span></div>
+                    <span class="rights">Все права защищены © 2020 Tik Boom</span>
+                </div>
+                <img src="./img/footer.png" alt="tiktokboom">
+
+            </div>
+    </footer>
 
 
     <script src="js/common.js"></script>
