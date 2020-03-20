@@ -13,3 +13,13 @@ function calc() {
 
 
 }
+
+document.getElementById('header__opt').addEventListener('click', () => scrollToElement('#calc'))
+document.getElementById('header__price').addEventListener('click', () => scrollToElement('#offers'))
+
+function scrollToElement(selector) {
+    let element = document.querySelector(selector);
+    element && element.scrollIntoView({ behavior: "smooth" });;
+}
+
+
