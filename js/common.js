@@ -3,9 +3,7 @@ function calc() {
     let num2 = 0.0012;
     let result;
 
-    if (num1 == '') {
-        alert('Пожалуйста введите количество просмотров!');
-    }
+
 
 
     result = num1 * num2
@@ -14,8 +12,8 @@ function calc() {
 
 }
 
-document.getElementById('header__opt').addEventListener('click', () => scrollToElement('#calc'))
-document.getElementById('header__price').addEventListener('click', () => scrollToElement('#offers'))
+document.getElementById('header__opt').addEventListener('click', () => scrollToElement('#offers'))
+document.getElementById('header__price').addEventListener('click', () => scrollToElement('#calc'))
 
 function scrollToElement(selector) {
     let element = document.querySelector(selector);
