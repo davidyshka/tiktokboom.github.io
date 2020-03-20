@@ -12,6 +12,7 @@ body
     color: #fff
 a
     text-decoration: none
+    color: #fff
 
 .slash
     display: block
@@ -21,8 +22,8 @@ a
     transform: rotate(25deg)
 .container
     width: 100%
-    max-width: 1160px
-    padding: 0 5px
+    max-width: 1150px
+    padding: 0 10px
     margin: 0 auto
 
 
@@ -135,6 +136,7 @@ a
             font-size: 11px
             font-weight: 600
             color: #797b7c
+           
         &-block
             display: flex
             flex-direction: column
@@ -145,13 +147,15 @@ a
             width: 275px
             height: 227px
             position: relative
+
+
         &-price
             position: absolute
             width: 175px
             height: 50px
             border-radius: 10px
             background-color: #fff
-            bottom: -18px
+            bottom: -35px
             font-size: 28.82px
             font-weight: bold
             color: #000
@@ -218,7 +222,7 @@ a
         justify-content: center
     &__img
         user-select: none
-        margin-top: 95px
+        margin-top: 35px
         margin-right: 70px
         width: 100%
         height: auto
@@ -226,12 +230,14 @@ a
         font-size: 37.83px
         border: none
         background: #f2f9fa
+        margin-bottom: 50px
         
         
 
 .calculator
     display: flex
     flex-direction: column
+    justify-content: space-between
     background-color: #f2f9fa
     height: 120px
     padding-top: 18px
@@ -285,9 +291,11 @@ a
     justify-content: space-between
     margin-bottom: 60px
     &__item
+        position: relative
         width: 165px
         height: 80px
         border: 1px solid #f9ecef
+        padding: 10px
 .itogo
     font-size: 23.76px
     margin-bottom: 10px
@@ -317,3 +325,5 @@ a
 .rights
     font-size: 12.02px
     color: #acadae
+
+@import "media"
