@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="stylesheet" href="./css/main.min.css">
     <title>Document</title>
 </head>
@@ -127,15 +128,16 @@
                 </div>
                 <div class="calc__wrapper-two">
                     <div class="calculator">
-                        <!-- <span class="calculator__view">Введите количество просмотров</span> -->
+
                         <input placeholder="Введите количество просмотров"
                             onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="calc__input" oninput='calc()'
                             type="text" name="number-viewers" autocomplete="off" id="n1">
                     </div>
 
                     <div class="link">
-                        <!-- <span class="link__text">Вставьте ссылку на видео</span> -->
-                        <input placeholder="Вставьте ссылку на видео" class="link__input" type="text">
+
+                        <input oninput='calc()' placeholder="Вставьте ссылку на видео" id="link__input"
+                            class="link__input" type="text">
                     </div>
                     <span class="pay">Выберите способ оплаты</span>
                     <div class="payments">
@@ -185,7 +187,7 @@
                             </div>
 
                         </div>
-                        <a class="pay__btn" href="#">Оплатить</a>
+                        <a class="pay__btn" href="#popup">Оплатить</a>
                     </div>
                 </div>
 
@@ -207,9 +209,18 @@
             </div>
         </div>
     </footer>
+    <div id="popup" class="mfp-hide popup">
+
+        <div id="view">Введите количество просмотров!</div>
+        <div id="link__video">Ссылка на видео: "Вставьте ссылку"</div>
+        <div id="result">Итого: 0</div>
+    </div>
 
 
-    <script src="js/common.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="js/common.js" class=""></script>
 </body>
 
 </html>
