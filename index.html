@@ -79,36 +79,42 @@
             <div class="offers__wrapper">
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «S»</span>
-                    <div class="offers__item-block">
-                        <img src="./img/tiktok.png" alt="tiktok">
-                        <div class="offers__item-title">3 миллиона</div>
-                        <div class="offers__item-views">просмотров</div>
-                        <span class="offers__item-price">
-                            990 руб.
-                        </span>
-                    </div>
+                    <a href="#">
+                        <div class="offers__item-block price__one">
+                            <img src="./img/tiktok.png" alt="tiktok">
+                            <div class="offers__item-title">3 миллиона</div>
+                            <div class="offers__item-views">просмотров</div>
+                            <span class="offers__item-price white-price">
+
+                            </span>
+                        </div>
+                    </a>
                 </div>
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «M»</span>
-                    <div class="offers__item-block">
-                        <img src="./img/tiktok.png" alt="tiktok">
-                        <div class="offers__item-title">7 миллионов</div>
-                        <div class="offers__item-views">просмотров</div>
-                        <span class="offers__item-price blue-price">
-                            1790 руб.
-                        </span>
-                    </div>
+                    <a href="#">
+                        <div class="offers__item-block price__two">
+                            <img src="./img/tiktok.png" alt="tiktok">
+                            <div class="offers__item-title">7 миллионов</div>
+                            <div class="offers__item-views">просмотров</div>
+                            <span class="offers__item-price blue-price">
+
+                            </span>
+                        </div>
+                    </a>
                 </div>
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «L»</span>
-                    <div class="offers__item-block">
-                        <img src="./img/tiktok.png" alt="tiktok">
-                        <div class="offers__item-title">20 миллионов</div>
-                        <div class="offers__item-views">просмотров</div>
-                        <span " class=" offers__item-price red-price">
-                            2940 руб.
-                        </span>
-                    </div>
+                    <a href="#">
+                        <div class="offers__item-block price__three">
+                            <img src="./img/tiktok.png" alt="tiktok">
+                            <div class="offers__item-title">20 миллионов</div>
+                            <div class="offers__item-views">просмотров</div>
+                            <span " class=" offers__item-price red-price">
+
+                            </span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -121,14 +127,15 @@
                 </div>
                 <div class="calc__wrapper-two">
                     <div class="calculator">
-                        <span class="calculator__view">Введите количество просмотров</span>
-                        <input onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="calc__input"
-                            oninput='calc()' type="text" name="number-viewers" autocomplete="off" id="n1">
+                        <!-- <span class="calculator__view">Введите количество просмотров</span> -->
+                        <input placeholder="Введите количество просмотров"
+                            onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="calc__input" oninput='calc()'
+                            type="text" name="number-viewers" autocomplete="off" id="n1">
                     </div>
 
                     <div class="link">
-                        <span class="link__text">Вставьте ссылку на видео</span>
-                        <input class="link__input" type="text">
+                        <!-- <span class="link__text">Вставьте ссылку на видео</span> -->
+                        <input placeholder="Вставьте ссылку на видео" class="link__input" type="text">
                     </div>
                     <span class="pay">Выберите способ оплаты</span>
                     <div class="payments">
