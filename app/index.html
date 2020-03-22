@@ -93,7 +93,7 @@
                 </div>
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «M»</span>
-                    <a id="7m" href="#n1">
+                    <a onclick="n1.value = 7000000" id="7m" href="#n1">
                         <div class="offers__item-block price__two">
                             <img src="./img/tiktok.png" alt="tiktok">
                             <div class="offers__item-title">7 миллионов</div>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «L»</span>
-                    <a id="20m" href="#n1">
+                    <a onclick="n1.value = 20000000" id="20m" href="#n1">
                         <div class="offers__item-block price__three">
                             <img src="./img/tiktok.png" alt="tiktok">
                             <div class="offers__item-title">20 миллионов</div>
@@ -187,7 +187,7 @@
                             </div>
 
                         </div>
-                        <a class="pay__btn" href="#popup">Оплатить</a>
+                        <button class="pay__btn" href="#popup">Оплатить</button>
                     </div>
                 </div>
 
@@ -210,10 +210,18 @@
         </div>
     </footer>
     <div id="popup" class="mfp-hide popup">
+        <img class="popup-title" src="./img/popup-title.png" alt="popup-title">
+        <h1 class="popup-title-h1">Заявка на оплату</h1>
+        <form action="send.php" action="post">
+            <div class="popup__block">
+                <div id="view">Введите количество просмотров!</div>
+                <div id="link__video">Ссылка на видео: "Вставьте ссылку"</div>
+                <div>Способ оплаты</div>
+            </div>
 
-        <div id="view">Введите количество просмотров!</div>
-        <div id="link__video">Ссылка на видео: "Вставьте ссылку"</div>
-        <div id="result">Итого: 0</div>
+
+            <div id="result">Итого: 0</div>
+        </form>
     </div>
 
 

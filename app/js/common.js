@@ -3,11 +3,11 @@ function calc() {
     let link = document.getElementById('link__input').value;
     let num2 = 0.00045;
     let result;
-    let millionThree = document.getElementById('3m').onclick
 
-    // if (link === "") {
-    //     link = "Вставьте ссылку"
-    // }
+
+    if (link === "") {
+        link = "Вставьте ссылку"
+    }
 
     if (num1 >= 3000000) {
         num2 = 0.00033
@@ -26,12 +26,14 @@ function calc() {
 
     result = num1 * num2
     document.getElementById('out').innerHTML = result.toFixed(4) * 1 + ' Руб.'
-    document.getElementById('result').innerHTML = "Итого: " + result
+    document.getElementById('result').innerHTML = "Итого: " + result + ' Руб.'
     document.getElementById('view').innerHTML = "Количество просмотров: " + num1
     document.getElementById('link__video').innerHTML = "Ссылка на видео: " + link
 
 
 }
+
+
 
 
 
