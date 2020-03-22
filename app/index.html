@@ -142,37 +142,37 @@
                     <span class="pay">Выберите способ оплаты</span>
                     <div class="payments">
                         <div class="payments__item">
-                            <a href="#">
+                            <a id="qiwi" class="payments__link">
                                 <img class="payments__item-img" src="./img/qiwi.png" alt="payments">
                             </a>
                         </div>
                         <div class="payments__item">
-                            <a href="#">
+                            <a id="yandex" class="payments__link">
                                 <img class="payments__item-img" src="./img/yandex.png" alt="payments">
                             </a>
                         </div>
 
                         <div class="payments__item">
 
-                            <a href="#">
+                            <a id="perfect" class="payments__link">
                                 <img class="payments__item-img" src="./img/perfect.png" alt="payments">
                             </a>
                         </div>
                         <div class="payments__item">
 
-                            <a href="#">
+                            <a id="payeer" class="payments__link">
                                 <img class="payments__item-img" src="./img/payeer.png" alt="payments">
                             </a>
                         </div>
                         <div class="payments__item">
 
-                            <a href="#">
+                            <a id="btc" class="payments__link">
                                 <img class="payments__item-img" src="./img/btc.png" alt="payments">
                             </a>
                         </div>
                         <div class="payments__item">
 
-                            <a href="#">
+                            <a id="eth" class="payments__link">
                                 <img class="payments__item-img" src="./img/eth.png" alt="payments">
                             </a>
                         </div>
@@ -214,13 +214,22 @@
         <h1 class="popup-title-h1">Заявка на оплату</h1>
         <form action="send.php" action="post">
             <div class="popup__block">
-                <div id="view">Введите количество просмотров!</div>
-                <div id="link__video">Ссылка на видео: "Вставьте ссылку"</div>
-                <div>Способ оплаты</div>
+                <div class="popup__view">
+                    <div class="popup__subtitle">Количество просмотров</div>
+                    <input id="popup__view-input"></input>
+                </div>
+                <div class="popup__video">
+                    <div class="popup__subtitle">Ссылка на видео</div>
+                    <input id="popup__video-input"></input>
+                </div>
+                <div class="pay__value">
+                    <div class="popup__subtitle" style="margin: 0">Способ оплаты</div>
+                    <img id="pay__value__img" class="pay__value-img" src="" alt="payWallet">
+                </div>
             </div>
 
 
-            <div id="result">Итого: 0</div>
+
         </form>
     </div>
 
