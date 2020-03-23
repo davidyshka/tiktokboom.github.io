@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="stylesheet" href="./css/main.min.css">
-    <title>TikTokBoom</title>
+    <title>TTBoom</title>
 </head>
 
 <body>
@@ -84,7 +84,7 @@
             <div class="offers__wrapper">
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «S»</span>
-                    <a onclick="calc__input.value = 3000000" class="3m" id="3m" href="#n1">
+                    <a onclick="calc__input.value = 3000000; calc()" class="3m" id="3m">
                         <div class="offers__item-block price__one">
                             <img src="./img/tiktok.png" alt="tiktok">
                             <div class="offers__item-title">3 миллиона</div>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «M»</span>
-                    <a onclick="calc__input.value = 7000000" id="7m" href="#n1">
+                    <a onclick="calc__input.value = 7000000; calc()" id="7m">
                         <div class="offers__item-block price__two">
                             <img src="./img/tiktok.png" alt="tiktok">
                             <div class="offers__item-title">7 миллионов</div>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «L»</span>
-                    <a onclick="calc__input.value = 20000000" id="20m" href="#n1">
+                    <a onclick="calc__input.value = 20000000; calc()" id="20m">
                         <div class="offers__item-block price__three">
                             <img src="./img/tiktok.png" alt="tiktok">
                             <div class="offers__item-title">20 миллионов</div>
@@ -193,7 +193,7 @@
                             </div>
 
                         </div>
-                        <button disabled id="pay__btn" class="pay__btn" href="#popup">Оплатить</button>
+                        <button disabled id="pay__btn" class="pay__btn disabled" href="#popup">Оплатить</button>
                     </div>
                 </div>
 
@@ -219,65 +219,84 @@
     <div id="popup" class="mfp-hide popup">
         <img class="popup-title" src="./img/popup-title.png" alt="popup-title">
         <h1 class="popup-title-h1">Заявка на оплату</h1>
-        <form action="send.php" action="post">
+        <form class="form" id="form" action="mail.php" action="post">
+            <!-- Hidden Required Fields -->
+            <input type="hidden" name="project_name" value="tikboom.ru">
+            <input type="hidden" name="admin_email" value="david.komarovskiy@mail.ru">
+            <input type="hidden" name="form_subject" value="Оплата просмотров">
+            <!-- END Hidden Required Fields -->
             <div class="popup__block">
                 <div class="popup__view">
                     <div class="popup__subtitle">Количество просмотров</div>
-                    <input readonly class="popup__view-input" id="popup__view-input"></input>
+                    <input name="Количество просмотров" readonly class="popup__view-input"
+                        id="popup__view-input"></input>
                 </div>
                 <div class="popup__video">
                     <div class="popup__subtitle">Ссылка на видео</div>
-                    <textarea readonly class="popup__video-input" id="popup__video-input"></textarea>
+                    <textarea name="Ссылка на видео" readonly class="popup__video-input"
+                        id="popup__video-input"></textarea>
                 </div>
                 <div class="pay__value">
                     <div class="popup__subtitle">Способ оплаты</div>
                     <img id="pay__value__img" class="pay__value-img" src="./img/qiwiMini.png" alt="payWallet">
+                    <input id="pay__method" name="Способ оплаты" type="text">
                 </div>
             </div>
 
 
+
+
+            <div class="popup__info">
+                <div>
+                    <div class="popup__info-pay">Переведите<span class="result" id="result"> 0 Руб.</span> на кошелек:
+                    </div>
+                    <div class="popup__info-wallet">
+                        <input readonly type="text" class="wallet" id="wallet">
+                        <div class="tooltip">
+                            <a id="copyWallet" onclick="copyWallet() " onmouseout="outFunc()" class="copyWallet"><img
+                                    src=" ./img/copy.png" alt="copy">
+                                <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+                <span class="popup__stick"></span>
+                <div>
+                    <div class="popup__info-pay">В примечании к оплате укажите:</div>
+                    <div class="popup__info-wallet">
+                        <input readonly type="text" id="randomCode" class="personal__code">
+                        <div class="tooltip">
+                            <a onclick="copyCode()" onmouseout="outFunc()" id="copyCode" class="copyCode">
+                                <img src="./img/copy.png" alt="copy">
+                                <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="warning">
+                <img class="warning__img" src="./img/warning.png" alt="warning">
+                <div class="warning__text">Важно! Указывайте в примечании ваш индивидуальный номер. А так же
+                    перепроверьте правильность ссылки на ваш видео ролик. После перевода средств, нажмите кнопку<span>
+                        «Я
+                        оплатил»</span>
+
+                </div>
+
+            </div>
+            <input value="Я оплатил" class="popup__submit" type="submit">
         </form>
-        <div class="popup__info">
-            <div>
-                <div class="popup__info-pay">Переведите<span class="result" id="result"> 0 Руб.</span> на номер:</div>
-                <div class="popup__info-wallet">
-                    <input readonly type="text" class="wallet" id="wallet">
-                    <div class="tooltip">
-                        <button id="copyWallet" onclick="copyWallet() " onmouseout="outFunc()" class="copy"><img
-                                src=" ./img/copy.png" alt="copy">
-                            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-                        </button>
-                    </div>
 
-                </div>
-            </div>
-            <span class="popup__stick"></span>
-            <div>
-                <div class="popup__info-pay">В примечании к оплате укажите:</div>
-                <div class="popup__info-wallet">
-                    <input readonly type="text" id="personal__code" class="personal__code">
-                    <div class="tooltip">
-                        <button onclick="copyCode() " onmouseout="outFunc()" id="copyCode" class="copy"><img
-                                src="./img/copy.png" alt="copy">
-                            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span></button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="warning">
-            <img class="warning__img" src="./img/warning.png" alt="warning">
-            <div class="warning__text">Важно! Указывайте в примечании ваш индивидуальный номер. А так же
-                перепроверьте правильность ссылки на ваш видео ролик. После перевода средств, нажмите кнопку<span> «Я
-                    оплатил»</span>
-            </div>
-        </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js">
         </script>
-        <script src="js/common.js" class=""></script>
+        <script src="js/common.js"></script>
+        <!-- <script src="js/mail.js"></script> -->
 </body>
 
 </html>
