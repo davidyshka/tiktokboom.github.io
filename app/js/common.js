@@ -146,11 +146,19 @@ function checkParams() {
     let payLink = $('.payments__link');
 
 
-    if (viewers.length != 0 && linkVideo.length != 0) {
+    if (viewers.length != 0 && linkVideo.length != 0 && payLink.hasClass('active')) {
         $('#pay__btn').removeAttr('disabled');
     } else {
         $('#pay__btn').attr('disabled', 'disabled');
+
+
+
     }
+
+
+
+
+
 
 
 

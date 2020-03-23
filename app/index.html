@@ -147,36 +147,36 @@
                     </div>
                     <span class="pay">Выберите способ оплаты</span>
                     <div class="payments">
-                        <div class="payments__item">
+                        <div onclick="checkParams()" class="payments__item">
                             <a id="qiwi" class="payments__link">
                                 <img class="payments__item-img" src="./img/qiwi.png" alt="payments">
                             </a>
                         </div>
-                        <div class="payments__item">
+                        <div onclick="checkParams()" class="payments__item">
                             <a id="yandex" class="payments__link">
                                 <img class="payments__item-img" src="./img/yandex.png" alt="payments">
                             </a>
                         </div>
 
-                        <div class="payments__item">
+                        <div onclick="checkParams()" class="payments__item">
 
                             <a id="perfect" class="payments__link">
                                 <img class="payments__item-img" src="./img/perfect.png" alt="payments">
                             </a>
                         </div>
-                        <div class="payments__item">
+                        <div onclick="checkParams()" class="payments__item">
 
                             <a id="payeer" class="payments__link">
                                 <img class="payments__item-img" src="./img/payeer.png" alt="payments">
                             </a>
                         </div>
-                        <div class="payments__item">
+                        <div onclick="checkParams()" class="payments__item">
 
                             <a id="btc" class="payments__link">
                                 <img class="payments__item-img" src="./img/btc.png" alt="payments">
                             </a>
                         </div>
-                        <div class="payments__item">
+                        <div onclick="checkParams()" class="payments__item">
 
                             <a id="eth" class="payments__link">
                                 <img class="payments__item-img" src="./img/eth.png" alt="payments">
@@ -223,11 +223,11 @@
             <div class="popup__block">
                 <div class="popup__view">
                     <div class="popup__subtitle">Количество просмотров</div>
-                    <input class="popup__view-input" id="popup__view-input"></input>
+                    <input readonly class="popup__view-input" id="popup__view-input"></input>
                 </div>
                 <div class="popup__video">
                     <div class="popup__subtitle">Ссылка на видео</div>
-                    <textarea class="popup__video-input" id="popup__video-input"></textarea>
+                    <textarea readonly class="popup__video-input" id="popup__video-input"></textarea>
                 </div>
                 <div class="pay__value">
                     <div class="popup__subtitle">Способ оплаты</div>
@@ -241,7 +241,7 @@
             <div>
                 <div class="popup__info-pay">Переведите<span class="result" id="result"> 0 Руб.</span> на номер:</div>
                 <div class="popup__info-wallet">
-                    <input type="text" class="wallet" id="wallet">
+                    <input readonly type="text" class="wallet" id="wallet">
                     <div class="tooltip">
                         <button id="copyWallet" onclick="copyWallet() " onmouseout="outFunc()" class="copy"><img
                                 src=" ./img/copy.png" alt="copy">
@@ -255,7 +255,7 @@
             <div>
                 <div class="popup__info-pay">В примечании к оплате укажите:</div>
                 <div class="popup__info-wallet">
-                    <input type="text" id="personal__code" class="personal__code">
+                    <input readonly type="text" id="personal__code" class="personal__code">
                     <div class="tooltip">
                         <button onclick="copyCode() " onmouseout="outFunc()" id="copyCode" class="copy"><img
                                 src="./img/copy.png" alt="copy">
