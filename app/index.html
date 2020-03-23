@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,12 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="stylesheet" href="./css/main.min.css">
-    <title>Document</title>
+    <title>TikTokBoom</title>
 </head>
 
 <body>
+
+
     <header class="header">
         <div class="container">
             <div class="header__links">
@@ -236,7 +238,12 @@
                 <div class="popup__info-pay">Переведите<span class="result" id="result"> 0 Руб.</span> на номер:</div>
                 <div class="popup__info-wallet">
                     <input type="text" disabled=disabled class="wallet" id="wallet">
-                    <a id="copyWallet" onclick="copyWallet()" class="copy"><img src=" ./img/copy.png" alt="copy"></a>
+                    <div class="tooltip">
+                        <button id="copyWallet" onclick="copyWallet() " onmouseout="outFunc()" class="copy"><img
+                                src=" ./img/copy.png" alt="copy">
+                            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                        </button>
+                    </div>
 
                 </div>
             </div>
@@ -245,7 +252,11 @@
                 <div class="popup__info-pay">В примечании укажите:</div>
                 <div class="popup__info-wallet">
                     <input disabled=disabled type="text" id="personal__code" class="personal__code">
-                    <a id="copyCode" onclick="copyCode()" class="copy"><img src="./img/copy.png" alt="copy"></a>
+                    <div class="tooltip">
+                        <button id="copyCode" onclick="copyCode()" onmouseout="outFunc()" class="copy"><img
+                                src="./img/copy.png" alt="copy">
+                            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span></button>
+                    </div>
                 </div>
             </div>
 

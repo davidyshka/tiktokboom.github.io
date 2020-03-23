@@ -98,9 +98,14 @@ function copyCode() {
     let copyText = document.getElementById("personal__code");
     copyText.select();
     document.execCommand("copy");
-    alert("Copied the text: " + copyText.value);
+    let tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied: " + copyText.value;
 }
 
+function outFunc() {
+    let tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
+}
 
 
 
