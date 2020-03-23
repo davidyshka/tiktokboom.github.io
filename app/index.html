@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+    <!-- HEADER -->
 
     <header class="header">
         <div class="container">
@@ -42,6 +42,7 @@
             </div>
         </div>
     </header>
+    <!-- ADVANTAGES -->
     <section class="advantages" id="advantages">
         <div class="container">
             <div class="advantages__title"><img ondragstart="return false;" src="./img/advantages.png" alt="advantages">
@@ -76,13 +77,14 @@
                 </div>
             </div>
     </section>
+    <!-- OFFERS -->
     <section class="offers" id="offers">
         <div class="container">
             <div class="offers__title"><img ondragstart="return false;" src="./img/offers.png" alt="offers"></div>
             <div class="offers__wrapper">
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «S»</span>
-                    <a onclick="n1.value = 3000000" class="3m" id="3m" href="#n1">
+                    <a onclick="calc__input.value = 3000000" class="3m" id="3m" href="#n1">
                         <div class="offers__item-block price__one">
                             <img src="./img/tiktok.png" alt="tiktok">
                             <div class="offers__item-title">3 миллиона</div>
@@ -95,7 +97,7 @@
                 </div>
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «M»</span>
-                    <a onclick="n1.value = 7000000" id="7m" href="#n1">
+                    <a onclick="calc__input.value = 7000000" id="7m" href="#n1">
                         <div class="offers__item-block price__two">
                             <img src="./img/tiktok.png" alt="tiktok">
                             <div class="offers__item-title">7 миллионов</div>
@@ -108,7 +110,7 @@
                 </div>
                 <div class="offers__item">
                     <span class="offers__item-package">ПАКЕТ «L»</span>
-                    <a onclick="n1.value = 20000000" id="20m" href="#n1">
+                    <a onclick="calc__input.value = 20000000" id="20m" href="#n1">
                         <div class="offers__item-block price__three">
                             <img src="./img/tiktok.png" alt="tiktok">
                             <div class="offers__item-title">20 миллионов</div>
@@ -122,6 +124,7 @@
             </div>
         </div>
     </section>
+    <!-- CALCULATOR -->
     <section class="calc" id="calc">
         <div class="container">
             <div class="calc__wrapper">
@@ -132,14 +135,15 @@
                     <div class="calculator">
 
                         <input placeholder="Введите количество просмотров"
-                            onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="calc__input" oninput='calc()'
-                            type="text" name="number-viewers" autocomplete="off" id="n1">
+                            onkeyup="this.value = this.value.replace(/[^\d]/g,''); checkParams()" id="calc__input"
+                            class="calc__input" oninput="calc()" type="text" name="number-viewers" autocomplete="off"
+                            id="calc__input">
                     </div>
 
                     <div class="link">
 
-                        <input oninput='calc()' placeholder="Вставьте ссылку на видео" id="link__input"
-                            class="link__input" type="text">
+                        <input oninput="calc()" onkeyup=" checkParams()" placeholder="Вставьте ссылку на видео"
+                            id="link__input" class="link__input" type="text">
                     </div>
                     <span class="pay">Выберите способ оплаты</span>
                     <div class="payments">
@@ -189,7 +193,7 @@
                             </div>
 
                         </div>
-                        <button id="pay__btn" class="pay__btn" href="#popup">Оплатить</button>
+                        <button disabled id="pay__btn" class="pay__btn" href="#popup">Оплатить</button>
                     </div>
                 </div>
 
@@ -197,7 +201,7 @@
         </div>
     </section>
 
-
+    <!-- FOOTER -->
 
     <footer class="footer" id="footer">
         <div class="container">
@@ -211,6 +215,7 @@
             </div>
         </div>
     </footer>
+    <!-- POPUP -->
     <div id="popup" class="mfp-hide popup">
         <img class="popup-title" src="./img/popup-title.png" alt="popup-title">
         <h1 class="popup-title-h1">Заявка на оплату</h1>
@@ -218,15 +223,14 @@
             <div class="popup__block">
                 <div class="popup__view">
                     <div class="popup__subtitle">Количество просмотров</div>
-                    <input placeholder="Количество просмотров" class="popup__view-input" id="popup__view-input"></input>
+                    <input class="popup__view-input" id="popup__view-input"></input>
                 </div>
                 <div class="popup__video">
                     <div class="popup__subtitle">Ссылка на видео</div>
-                    <textarea placeholder="Вы не вставили ссылку!" class="popup__video-input"
-                        id="popup__video-input"></textarea>
+                    <textarea class="popup__video-input" id="popup__video-input"></textarea>
                 </div>
                 <div class="pay__value">
-                    <div class="popup__subtitle" style="margin-bottom: 10px text-align: center">Способ оплаты</div>
+                    <div class="popup__subtitle">Способ оплаты</div>
                     <img id="pay__value__img" class="pay__value-img" src="./img/qiwiMini.png" alt="payWallet">
                 </div>
             </div>
@@ -237,7 +241,7 @@
             <div>
                 <div class="popup__info-pay">Переведите<span class="result" id="result"> 0 Руб.</span> на номер:</div>
                 <div class="popup__info-wallet">
-                    <input type="text" disabled=disabled class="wallet" id="wallet">
+                    <input type="text" class="wallet" id="wallet">
                     <div class="tooltip">
                         <button id="copyWallet" onclick="copyWallet() " onmouseout="outFunc()" class="copy"><img
                                 src=" ./img/copy.png" alt="copy">
@@ -249,11 +253,11 @@
             </div>
             <span class="popup__stick"></span>
             <div>
-                <div class="popup__info-pay">В примечании укажите:</div>
+                <div class="popup__info-pay">В примечании к оплате укажите:</div>
                 <div class="popup__info-wallet">
-                    <input disabled=disabled type="text" id="personal__code" class="personal__code">
+                    <input type="text" id="personal__code" class="personal__code">
                     <div class="tooltip">
-                        <button id="copyCode" onclick="copyCode()" onmouseout="outFunc()" class="copy"><img
+                        <button onclick="copyCode() " onmouseout="outFunc()" id="copyCode" class="copy"><img
                                 src="./img/copy.png" alt="copy">
                             <span class="tooltiptext" id="myTooltip">Copy to clipboard</span></button>
                     </div>

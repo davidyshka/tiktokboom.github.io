@@ -1,13 +1,11 @@
 function calc() {
-    let num1 = document.getElementById('n1').value;
+    let num1 = document.getElementById('calc__input').value;
     let link = document.getElementById('link__input').value;
     let num2 = 0.00045;
     let result;
 
 
-    if (link === "") {
-        link = "Вставьте ссылку"
-    }
+
 
     if (num1 >= 3000000) {
         num2 = 0.00033
@@ -26,12 +24,14 @@ function calc() {
 
     result = num1 * num2
     document.getElementById('out').innerHTML = result.toFixed(3) * 1 + ' Руб.'
-    document.getElementById('result').innerHTML = ' ' + result + ' Руб.'
+    document.getElementById('result').innerHTML = ' ' + result.toFixed(3) * 1 + ' Руб.'
     document.getElementById('popup__view-input').value = num1
     document.getElementById('popup__video-input').value = link
 
 
 }
+
+
 
 
 
@@ -43,6 +43,14 @@ const btcBtn = document.getElementById('btc');
 const ethBtn = document.getElementById('eth');
 const payBtn = document.getElementById('pay__btn');
 const getRandom = Math.ceil(Math.random() * 100000 + 1);
+// const input = document.getElementById('calc__input');
+// const error = document.getElementById('.pay__btn');
+
+// input.addEventListener('blur', () => {
+//     if (input.value === '') {
+//         error.style.display = 'block';
+//     }
+// });
 
 
 
@@ -90,25 +98,26 @@ function copyWallet() {
     let copyText = document.getElementById("wallet");
     copyText.select();
     document.execCommand("copy");
-    alert("Copied the text: " + copyText.value);
-}
+
+    let tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied: " + copyText.value;
+
+};
 
 function copyCode() {
 
     let copyText = document.getElementById("personal__code");
     copyText.select();
     document.execCommand("copy");
+
     let tooltip = document.getElementById("myTooltip");
     tooltip.innerHTML = "Copied: " + copyText.value;
-}
+};
 
 function outFunc() {
     let tooltip = document.getElementById("myTooltip");
     tooltip.innerHTML = "Copy to clipboard";
-}
-
-
-
+};
 
 
 
@@ -130,3 +139,20 @@ $('.payments__link').click(function () {
     $('.payments__link').not(this).removeClass('active');
     $(this).toggleClass('active');
 });
+
+function checkParams() {
+    let viewers = $('#calc__input').val();
+    let linkVideo = $('#link__input').val();
+    let payLink = $('.payments__link');
+
+
+    if (viewers.length != 0 && linkVideo.length != 0) {
+        $('#pay__btn').removeAttr('disabled');
+    } else {
+        $('#pay__btn').attr('disabled', 'disabled');
+    }
+
+
+
+}
+
